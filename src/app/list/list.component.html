@@ -1,3 +1,27 @@
-<p>
-  list works!
-</p>
+<div>
+  <div *ngFor="let row of list" [ngClass]="{'expanded': row.expanded}" class="row">
+    <ng-container *ngIf="row.loaded else loader">
+      <div *ngIf="row.expanded else collapsed" (click)="collapse(row)">
+        expanded has lot of stuf
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+      </div>
+      <ng-template #collapsed>
+        <div (click)="expand(row)">collapsed</div>
+      </ng-template>
+    </ng-container>
+      <ng-template #loader><div>loading</div></ng-template>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.row {
+    height: 20px;
+    width: 50%;
+    background-color: #72A0BC;
+    margin: 10px 0;
+    
+    &.expanded {
+        height: auto;
+    }
+
+    .loader{
+        background-color: #A6ACB0;
+    }
+}
