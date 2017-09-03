@@ -1,4 +1,9 @@
 <div>
+
+  <div>
+    has a workaround for : <a href="https://github.com/angular/angular/issues/18794">ngIf transition inside another animated element does not work #18794</a> 
+  </div>
+
   <div *ngFor="let row of list" [ngClass]="{'expanded': row.expanded}" class="row" [@openClose]="row.state">
     <ng-container *ngIf="row.loaded else loader">
       <div *ngIf="row.expanded else collapsed" (click)="collapse(row)"[@fadeIn]>
