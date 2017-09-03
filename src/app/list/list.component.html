@@ -1,5 +1,5 @@
 <div>
-  <div *ngFor="let row of list" [ngClass]="{'expanded': row.expanded}" class="row">
+  <div *ngFor="let row of list" [ngClass]="{'expanded': row.expanded}" class="row" [@openClose]="row.state">
     <ng-container *ngIf="row.loaded else loader">
       <div *ngIf="row.expanded else collapsed" (click)="collapse(row)">
         expanded has lot of stuf
