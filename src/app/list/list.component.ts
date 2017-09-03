@@ -1,3 +1,4 @@
+import { element } from 'protractor/built';
 import { animate, state, style, transition, trigger, group } from '@angular/animations';
 import { expand } from 'rxjs/operator/expand';
 import { Component, OnInit } from '@angular/core';
@@ -44,9 +45,18 @@ export class ListComponent implements OnInit {
     ];
   }
 
+  collapseAll(row: Row) {
+    this.list.forEach((element) => {
+      if (element !== row) {
+        this.collapse(element);
+      }
+    });
+  }
+
   expand (row: Row): void {
     row.expanded = true;
     row.state = 'expanded';
+    this.collapseAll(row);
   }
 
   collapse (row: Row): void {
