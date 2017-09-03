@@ -29,7 +29,7 @@ interface Row {
     'fadeIn',
     [
       transition(
-        ':enter', [  style({ backgroundColor: 'red' }), animate(1000, style({ backgroundColor: 'blue' })) ])
+        ':enter', [  style({ opacity: '0' }), animate(1000) ])
     ])],
 })
 export class ListComponent implements OnInit {
