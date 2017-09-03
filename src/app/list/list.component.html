@@ -1,7 +1,7 @@
 <div>
   <div *ngFor="let row of list" [ngClass]="{'expanded': row.expanded}" class="row" [@openClose]="row.state">
     <ng-container *ngIf="row.loaded else loader">
-      <div *ngIf="row.expanded else collapsed" (click)="collapse(row)">
+      <div *ngIf="row.expanded else collapsed" (click)="collapse(row)"[@fadeIn]>
         expanded has lot of stuf
         1 <br>
         1 <br>
@@ -19,7 +19,7 @@
         1 <br>
       </div>
       <ng-template #collapsed>
-        <div (click)="expand(row)">collapsed</div>
+        <div (click)="expand(row)" [@fadeIn]>collapsed</div>
       </ng-template>
     </ng-container>
       <ng-template #loader><div>loading</div></ng-template>

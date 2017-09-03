@@ -14,15 +14,22 @@ interface Row {
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  animations: [trigger(
+  animations: [
+  trigger(
     'openClose', // animate height from 20px to sizecontent and apply overflow hidden during aniation
     [
       state('collapsed, void', style({height: '20px'})),
       state('expanded', style({height: '*'})),
       transition(
-        'collapsed => expanded', [ style({'overflow': 'hidden'}), animate(5000, style({height: '*'})) ]),
+        'collapsed => expanded', [ style({'overflow': 'hidden'}), animate(1000, style({height: '*'})) ]),
       transition(
-        'expanded => collapsed', [ style({'overflow': 'hidden'}), animate(5000, style({height: '20px'})) ])
+        'expanded => collapsed', [ style({'overflow': 'hidden'}), animate(1000, style({height: '20px'})) ])
+    ]),
+  trigger(
+    'fadeIn',
+    [
+      transition(
+        ':enter', [  style({ backgroundColor: 'red' }), animate(1000, style({ backgroundColor: 'blue' })) ])
     ])],
 })
 export class ListComponent implements OnInit {
