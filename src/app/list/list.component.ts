@@ -62,7 +62,9 @@ export class ListComponent implements OnInit {
 
   expand (row: Row): void {
     row.expanded = true;
-    row.state = 'expanded';
+    setTimeout(function() {
+      row.state = 'expanded';
+    }, 0);
     this.collapseAll(row);
   }
 
